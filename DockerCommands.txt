@@ -1,0 +1,46 @@
+Docker Commands:
+
+Pull Image from Container Registry and Run the container
+
+1) Pull:
+docker pull gcr.io/research-project-415611/my-task-manager9:v1v1: Pulling from research-project-415611/my-task-manager9
+
+2) Run:
+docker run -d  -p 3000:3000 -e NODE_ENV=production -e MONGO_URI=mongodb+srv://satish:satish@cluster0.dlrijam.mongodb.net/TaskManager?tls=true gcr.io/research-project-415611/my-task-manager9:v1
+
+
+Working on Images and Containers
+
+1) docker images ´´´´ To list the images
+
+2) docker stop $(docker ps -aq) ´´´´´To stop all containers
+
+3) docker rm $(docker ps -aq) ´´´´´´To remove all containers
+
+4) docker stop f171e9dcf43b ´´´´´´To stop specific container
+
+5) docker rm f171e9dcf43b ´´´´´´ To remove specific container
+
+6) docker rmi $(docker images -aq) ´´´´´To remove all images
+
+7) docker rmi -f 996226f3194b ´´´´´´To remove specific image
+
+8) docker system prune -a ´´´´´´To remove all stopped containers, unused networks, and dangling images
+
+
+
+
+Kubernates Commands
+
+1) Get Credentials from gcloud Kubernates Engine:
+gcloud container clusters get-credentials taskmanager --region europe-west3 --project research-project-415611
+
+2) run the deploymnet file; this file has the configuration of image to be downloaded to the cluster
+kubectl apply -f deployment.yaml
+
+3) run the service file; this file has the configuration to run the image in the cluster
+kubectl apply -f service.yaml
+
+
+
+

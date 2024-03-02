@@ -1,0 +1,10 @@
+Kubernates Commands
+
+1) Get Credentials from gcloud Kubernates Engine:
+gcloud container clusters get-credentials taskmanager --region europe-west3 --project research-project-415611
+
+2) run the deploymnet file; this file has the configuration of image to be downloaded to the cluster
+kubectl apply -f deployment.yaml
+
+3) run the service file; this file has the configuration to run the image in the cluster
+kubectl apply -f service.yaml
