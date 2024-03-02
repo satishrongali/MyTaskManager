@@ -943,7 +943,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 var server = app.listen(3000, function () {
-  console.log('Server is listening on port 3000 in  ' + process.env.NODE_ENV + ' mode');
+  console.log('Server is listening on port 3000 in ' + process.env.NODE_ENV + ' mode');
 });
 module.exports = server;
 //# sourceMappingURL=app.dev.js.map
