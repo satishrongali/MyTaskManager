@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taskmanager-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: taskmanager
+  template:
+    metadata:
+      labels:
+        app: taskmanager
+    spec:
+      containers:
+      - name: taskmanager
+        image: gcr.io/research-project-415611/my-task-manager7:v1
+        ports:
+        - containerPort: 3000
+        env:
+          - name: NODE_ENV
+            value: "production"
+          - name: MONGO_URI
+            value: "mongodb+srv://satish:satish@cluster0.dlrijam.mongodb.net/TaskManager?tls=true"
